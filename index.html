@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>MAN 2 GROBOGAN</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e9edf2 100%);
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+
+        /* Fallback font jika Inter tidak tersedia */
+        @supports (font-variation-settings: normal) {
+            body { font-family: 'Inter var', system-ui, sans-serif; }
+        }
+
+        .card {
+            max-width: 90vw;
+            width: 100%;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(2px);
+            border-radius: 4rem;
+            padding: 3rem 2rem;
+            box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.25),
+                        0 2px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.01);
+        }
+
+        .main-text {
+            font-size: clamp(2.2rem, 12vw, 5.8rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: #1e293b;
+            text-shadow: 2px 2px 12px rgba(0,0,0,0.05);
+            word-break: keep-all;
+            line-height: 1.2;
+        }
+
+        /* Efek sentuhan playful */
+        .main-text::after {
+            content: " ✨";
+            font-size: 0.6em;
+            opacity: 0.6;
+            display: inline-block;
+            animation: gentlePop 2s infinite ease;
+        }
+
+        @keyframes gentlePop {
+            0%, 100% { transform: translateY(0px); opacity: 0.6; }
+            50% { transform: translateY(-4px); opacity: 1; }
+        }
+
+        /* Opsi subteks minimalis (tidak mengganggu pesan utama) */
+        .sub {
+            margin-top: 1.8rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.3px;
+            color: #475569;
+            background: rgba(255,255,240,0.4);
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 60px;
+            backdrop-filter: blur(2px);
+            font-weight: 450;
+        }
+
+        /* Responsif sentuhan */
+        @media (max-width: 560px) {
+            .card {
+                padding: 2rem 1.2rem;
+                border-radius: 2.5rem;
+            }
+            .sub {
+                font-size: 0.75rem;
+                margin-top: 1.2rem;
+            }
+        }
+
+        /* Aksesibilitas dan sentuhan modern */
+        @media (prefers-reduced-motion: reduce) {
+            .main-text::after {
+                animation: none;
+            }
+            .card:hover {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="main-text">CUMA CADANGAN KOK</div>
+        <div class="sub">⏺ halaman sementara • tenang saja</div>
+    </div>
+</body>
+</html>
